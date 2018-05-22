@@ -1,0 +1,8 @@
+<h1>Our Consoles</h1>
+
+<ul>
+  <% @consoles.each do |console| %>
+  <li><%= link_to console.brand, console_path(console) %>
+    | <%= console.model %> | <%= console.price %></li>
+  <% end %>
+</ul>

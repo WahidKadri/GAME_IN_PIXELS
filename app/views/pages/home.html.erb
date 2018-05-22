@@ -1,2 +1,15 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <h1 class="text-center">Home Page</h1>
+        <div class="form-inline text-center">
+          <%= simple_form_for @console do |f| %>
+          <%= f.input :address, placeholder:'WHERE' %>
+          <%= f.input :brand, placeholder:'CONSOLE' %>
+          <%= f.submit "GAME", class: "btn form-control btn-primary" %>
+          <% end %>
+        </div>
+    </div>
+  </div>
+</div>
+
