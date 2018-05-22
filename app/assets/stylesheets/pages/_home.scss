@@ -1,4 +1,50 @@
 // Specific CSS for your home-page
-.test {
-  font-family: "cranberry_gin"
+.wrapper {
+  position: relative;
+  color: white;
+  text-align: center;
+  height: calc(100vh - 70px);
+  background-size: cover !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(to bottom, #0b112c 0%,#2a3c94 100%);
+}
+
+.encart {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(to right bottom, black 0%,#1F1F1F 100%);
+  height: 500px;
+  width: 1000px;
+  border-radius: 5px;
+  border: 1px solid #4158b3;
+}
+
+h1 {
+  color: white;
+  padding-bottom: 60px;
+}
+
+.form {
+  padding-top: 100px;
+}
+
+.form input {
+  border: 2px solid #4158b3;
+  border-radius: 10px;
+}
+
+.form-control {
+  border: 2px solid #4158b3;
+  border-radius: 7px;
+}
+
+.mario img {
+  position: absolute;
+  top: 48px;
+  left: 200px;
+  height: 200px;
+  width: 300px;
 }
