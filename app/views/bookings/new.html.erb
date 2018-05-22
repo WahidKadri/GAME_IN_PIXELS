@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6 col-sm-offset-3">
+      <h1>New booking</h1>
+        <div>
+      <%= simple_form_for [@console, @booking] do |f| %>
+      <%= f.label "Début de la location" %>
+      <%= f.date_field :start_date %>
+      <%= f.label "Fin de la location" %>
+      <%= f.date_field :end_date  %>
+        </div>
+      <%= f.submit "Louer", class: "btn btn-danger" %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+
+
+
+
