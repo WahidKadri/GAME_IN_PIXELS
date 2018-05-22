@@ -1,4 +1,5 @@
 class ConsolesController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index, :show]
   def index
     @consoles = policy_scope(Console)
   end
