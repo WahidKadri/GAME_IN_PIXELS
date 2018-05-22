@@ -6,6 +6,7 @@ class User < ApplicationRecord
 
   has_many :consoles
   has_many :bookings
+  has_many :booked_consoles, through: :bookings, source: :console
 
   # validates :avatar, presence: true
 end

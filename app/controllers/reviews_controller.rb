@@ -1,9 +1,11 @@
 class ReviewsController < ApplicationController
 
   def new
-    @review = Review.new
+    @booking = Booking.find(params[:booking_id])
+    # @console = @booking.console
+    @review = @booking.reviews.new
+    # @booking = Booking.find_by(user_id: current_user)
     authorize @review
-    @console = Console.find(params[:console_id])
   end
 
   def create

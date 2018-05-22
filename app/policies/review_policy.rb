@@ -1,8 +1,7 @@
 class ReviewPolicy < ApplicationPolicy
 
   def new?
-    record.booking.user == user
-    # current_user
+    user.booked_consoles.include?(record.booking.console)
   end
 
   def create?
@@ -13,5 +12,5 @@ class ReviewPolicy < ApplicationPolicy
     def resolve
       scope
     end
-end
+  end
 end

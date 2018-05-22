@@ -1,9 +1,9 @@
-<h1 class="text-center">Add a review for <%= @console %></h1>
+<h1 class="text-center">Add a review for <%= @booking.console.brand %></h1>
 
 <div class="container">
   <div class="row">
     <div class="col-xs-6 col-xs-offset-3">
-      <%= simple_form_for [@console, @review] do |f| %>
+      <%= simple_form_for [@booking, @review] do |f| %>
         <%= f.input :description %>
         <%= f.input :rating %>
         <%= f.submit "Add a review", class: "btn btn-success" %>
