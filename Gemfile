@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 ruby '2.4.4'
 
-
+gem 'pundit'
 gem 'devise'
 gem 'bootsnap', require: false
 gem 'figaro'
