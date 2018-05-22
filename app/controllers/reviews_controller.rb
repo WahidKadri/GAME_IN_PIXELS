@@ -9,9 +9,12 @@ class ReviewsController < ApplicationController
   end
 
   def create
-    @console = Console.find(params[:console_id])
+    @booking = Booking.find(params[:booking_id])
+
+
+    # @console = Console.find(params[:console_id])
     @review = Review.new(review_params)
-    @review.console = @console
+    @review.booking = @booking
     authorize @review
     if @review.save
       redirect_to consoles_path
