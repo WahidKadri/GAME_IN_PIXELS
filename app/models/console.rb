@@ -4,4 +4,7 @@ class Console < ApplicationRecord
   has_many :reviews, through: :bookings
 
   validates :brand, :model, :description, :address, :price, :number_of_pads, presence: true
+
+  mount_uploader :photo, PhotoUploader
+
 end
