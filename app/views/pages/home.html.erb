@@ -8,11 +8,11 @@
             <%= image_tag "Mario1.png" %>
           </div>
           <div class=" form form-inline text-center">
-            <%= simple_form_for @console do |f| %>
+            <%= simple_form_for @console, method: :get do |f| %>
             <%= f.input :address, label: false, placeholder:'WHERE' %>
-            <%= f.input :brand, label: false, :collection => %w[NINTENDO SEGA ATARI] %>
-            <%= f.input :model, label: false, :collection => ['Master System 1', 'Master System 2', 'MegaDrive 16 bits', 'Saturne','GameGear', 'GameBoy Fat', 'N64', 'SuperNintendo', 'SuperNes', '2600'] %>
-            <%= f.submit "GAME", class: "btn form-control btn-primary" %>
+            <%= f.input :brand, label: false, prompt:'--', :collection => @brands %>
+            <%= f.input :model, label: false, prompt:'--', :collection => @models %>
+            <%= f.submit "GAME", class: "btn form-control btn-primary", id:'home_search_btn' %>
             <% end %>
           </div>
         </div>
