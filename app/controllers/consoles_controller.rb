@@ -18,6 +18,8 @@ class ConsolesController < ApplicationController
   end
 
   def new
+    @brands = Console.distinct.pluck(:brand)
+    @models = Console.distinct.pluck(:model)
     @console = Console.new
     authorize @console
   end
@@ -27,7 +29,7 @@ class ConsolesController < ApplicationController
     @console.user = current_user
     authorize @console
     if @console.save
-      redirect_to consoles_path
+      redirect_to root_path
     else
       render :new
     end
