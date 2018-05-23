@@ -1,7 +1,15 @@
 class ConsolesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
   def index
-    @consoles = policy_scope(Console)
+      @consoles = policy_scope(Console)
+    if (params[:console][:brand] == "") && (params[:console][:model] == "")
+
+    elsif params[:console][:model] != ""
+      @consoles = Console.where(model: params[:console][:model])
+    else
+      @consoles = Console.where(brand: params[:console][:brand])
+    end
+
   end
 
   def show
