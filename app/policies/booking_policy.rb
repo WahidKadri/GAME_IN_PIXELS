@@ -8,6 +8,13 @@ class BookingPolicy < ApplicationPolicy
     new?
   end
 
+  def edit?
+    record.console.user == user
+  end
+
+  def update?
+    edit?
+  end
 
   class Scope < Scope
     def resolve

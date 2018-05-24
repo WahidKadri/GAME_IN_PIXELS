@@ -1,0 +1,95 @@
+
+<div class="wrapper2">
+  <div class="container">
+    <h1>dashboard</h1>
+<p><% current_user.consoles.each do |c| %>
+  <%= c %>
+  <% end %>
+
+
+
+</p>
+
+
+
+    <div>
+      <h1>Mes Bookings (<%= current_user.bookings.count %>)</h1>
+      <% current_user.bookings.each do |book| %>
+        <%= book.id %>
+
+      <% if book.status == 'Pending' %>
+        <div class="booking-container">
+          <p class="text-center"><%= book.id %>//////<%= book.start_date %>/<%= book.end_date %> for <%= book.console.user.email %> <%= book.status %>
+
+
+          </p>
+          <div class="buttons-container">
+
+            <% if policy(book).edit? %>
+            <%= simple_form_for book do |f| %>
+            <%= f.input :status, as: :hidden, input_html: { value: 'accepted'} %>
+            <%= f.submit "Accepted", class: "btn btn-primary" %>
+            <% end %>
+
+
+            <%= simple_form_for book do |f| %>
+            <%= f.input :status, as: :hidden, input_html: { value: 'Rejected'} %>
+            <%= f.submit "Refuser", class: "btn btn-danger" %>
+            <% end %>
+            <% end %>
+          </div>
+        </div>
+        <% end %>
+      </div>
+      <% end %>
+
+
+    </div>
+
+     <div>
+      <h3>Mes Bookings en attente</h3>
+      <% current_user.bookings.each do |book| %>
+      <% if book.status == "Pending" %>
+      <div>
+        <div class="booking-container ">
+          <p class="text-center"><%= book.start_date %>/<%= book.end_date %> for <%= book.console.user.email %> <%= book.status %>            <% if book.status == "accepted" %>
+             <i class="far fa-check-circle" style="color:green"></i>
+            <% elsif book.status == "Rejected" %>
+              <i class="fas fa-ban" style="color:Tomato"></i>
+            <% else %>
+              <i class="far fa-clock"></i>
+            <% end %></p>
+        </div>
+        <% end %>
+      </div>
+      <% end %>
+
+    <div>
+      <h3>Mes Bookings acceptees</h3>
+      <% current_user.bookings.each do |book| %>
+      <% if book.status == "accepted" %>
+      <div>
+        <div class="booking-container ">
+          <p class="text-center"><%= book.start_date %>/<%= book.end_date %> for <%= book.console.user.email %> <%= book.status %>
+             <i class="far fa-check-circle" style="color:green"></i>
+        </div>
+        <% end %>
+      </div>
+      <% end %>
+
+          <div>
+      <h3>Mes Bookings refusees</h3>
+      <% current_user.bookings.each do |book| %>
+      <% if book.status == "Rejected" %>
+      <div>
+        <div class="booking-container ">
+          <p class="text-center"><%= book.start_date %>/<%= book.end_date %> for <%= book.console.user.email %> <%= book.status %>
+              <i class="fas fa-ban" style="color:Tomato"></i>
+        </div>
+        <% end %>
+      </div>
+      <% end %>
+    </div>
+    </div>
+  </div>
+</div>
