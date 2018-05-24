@@ -1,5 +1,9 @@
 class BookingsController < ApplicationController
 
+  def index
+    @bookings = policy_scope(Booking)
+  end
+
   def new
     @booking = Booking.new
     authorize @booking
@@ -13,11 +17,34 @@ class BookingsController < ApplicationController
     @booking.user = current_user
     authorize @booking
     if @booking.save
-      redirect_to root_path
+      redirect_to dashboards_path
     else
       render :new
     end
   end
+
+  def edit
+    @booking = Booking.find(params[:id])
+    authorize @booking
+  end
+
+  def update
+    @booking = Booking.find(params[:id])
+    authorize @booking
+ # raise
+    if params[:booking][:status].present?
+      @booking.update(status: params[:booking][:status])
+      redirect_to dashboards_path, notice: "bookings updated"
+    else
+      if @booking.update(booking_params)
+        redirect_to dashboards_path
+      else
+        render :new
+      end
+    end
+  end
+
+
 
  private
 

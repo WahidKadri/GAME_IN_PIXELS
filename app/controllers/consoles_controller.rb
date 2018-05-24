@@ -38,7 +38,6 @@ class ConsolesController < ApplicationController
   def update
     @console = Console.find(params[:id])
     authorize @console
-    raise
     if @console.update(console_params)
       redirect_to root_path
     else
