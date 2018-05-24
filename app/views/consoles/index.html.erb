@@ -12,9 +12,11 @@
             <% else %>
               <div class="card" style="background-image: url(assets/console_retro.jpg)">
             <% end %>
-                <h6><%= link_to console.brand, console_path(console) %>
+                <h6><%= console.brand %>
                 <%= console.model %></h6>
-                <p><%= console.price %>€/Jour</p>
+                <p><%= link_to console_path(console), class:"btn-yellow" do %>
+                <%= console.price %>€/Jour
+                <% end %></p>
               </div>
           </div>
         <% end %>
