@@ -28,50 +28,15 @@ h1 {
   padding-bottom: 60px;
 }
 
-// =====
-.btn-green {
-    text-align: center;
-    color: white;
-    padding: 5px 25px;
-    border-radius: 20px;
-    font-weight: bold;
-    background: #3AC1AE;
-}
 
-#home_search_btn {
-
-    border: double #3AC1AE;
-
-}
-
-.btn-green:hover {
-    text-shadow: 0 -1px 1px #3AC1AE, 0 0 5px rgba(255, 255, 255, .8);
-    opacity: 0.9;
-    background: -webkit-radial-gradient(#3AC1AE 0%,#1A5E53 100%);
-    transition: opacity 0.3s ease-in-out;
-    box-shadow: 0px 0px 10px #3AC1AE;
-}
-
-// =====
 .form {
   padding-top: 100px;
 }
 
-.form input {
-  border: 2px solid #4158b3;
-  border-radius: 10px;
-  text-align: center;
-}
 
 .form-control {
-  border: 2px solid #4158b3;
   border-radius: 7px;
 }
-
-
-
-
-
 
 .mario img {
   position: absolute;
