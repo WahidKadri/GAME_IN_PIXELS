@@ -8,6 +8,7 @@ class ConsolesController < ApplicationController
 
   def show
     @console = Console.find(params[:id])
+    @booking = Booking.new
     authorize @console
   end
 
