@@ -1,2 +1,41 @@
-<h1><%= @console.brand %></h1>
-<%= cl_image_tag @console.photo, height: 300, width: 400, crop: :fill %>
+<div class="wrapper-show">
+  <div class="container">
+    <div class="black-card">
+      <div class="row">
+        <h1><%= @console.brand %> <%= @console.model %></h1>
+        <div>
+        <div class="col-md-6">
+            <div class="img-show" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path @console.photo, height: 300, width: 400, crop: :fill %>')">
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 col-md-offset-1">
+          <div class="description text-left">
+            <p> <strong>Propriétaire</strong> : <%= @console.user.email %></p>
+            <p> <strong>Description</strong> : <%= @console.description %></p>
+            <p> <strong>Nombre de joueur </strong> : <%= @console.number_of_pads %> <i class="fas fa-gamepad"></i></p>
+          </div>
+          <hr>
+           <div class= "text-left">
+            <%= simple_form_for [@console, @booking] do |f| %>
+            <%= f.input :start_date, as: :string, required: false, input_html: {id: "range_start"} %>
+             <%= f.input :end_date, as: :string, required: false, input_html: {id: "range_end"} %>
+           </div>
+           <hr>
+           <p>  <strong>Prix</strong>: <%= @console.price  %> Euro / jour <i class="fas fa-coins"></i></p>
+            <%= f.submit "Louer", class: "btn btn-danger" %>
+      <% end %>
+        </div>
+        </div>
+        <hr>
+        <div class="text-left reviews">
+          <h4>reviews</h4>
+          <p><i class="fas fa-terminal"></i> trop bien</p>
+          <p><i class="fas fa-terminal"></i> jamais reçu</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+

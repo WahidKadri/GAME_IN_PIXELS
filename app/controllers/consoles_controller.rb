@@ -8,6 +8,7 @@ class ConsolesController < ApplicationController
 
   def show
     @console = Console.find(params[:id])
+    @booking = Booking.new
     authorize @console
   end
 
@@ -23,6 +24,22 @@ class ConsolesController < ApplicationController
     @console.user = current_user
     authorize @console
     if @console.save
+      redirect_to root_path
+    else
+      render :new
+    end
+  end
+
+  def edit
+    @console = Console.find(params[:id])
+    authorize @console
+  end
+
+  def update
+    @console = Console.find(params[:id])
+    authorize @console
+    raise
+    if @console.update(console_params)
       redirect_to root_path
     else
       render :new
