@@ -19,6 +19,13 @@ class ConsolePolicy < ApplicationPolicy
     new?
   end
 
+  def edit?
+    record.user == user
+  end
+
+  def update?
+    edit?
+  end
 
 
   class Scope < Scope

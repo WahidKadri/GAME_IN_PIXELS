@@ -29,6 +29,21 @@ class ConsolesController < ApplicationController
     end
   end
 
+  def edit
+    @console = Console.find(params[:id])
+    authorize @console
+  end
+
+  def update
+    @console = Console.find(params[:id])
+    authorize @console
+    if @console.update(console_params)
+      redirect_to root_path
+    else
+      render :new
+    end
+  end
+
   private
 
   def console_params
