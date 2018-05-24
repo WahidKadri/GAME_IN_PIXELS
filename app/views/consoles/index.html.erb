@@ -1,27 +1,26 @@
-<h1 class="text">Our Consoles</h1>
 
-<!-- <div class="wrapper">
-  <div class="black-card"> -->
+<div class="wrapper">
+  <div class="black-card">
+    <h1 class="text">Our Consoles</h1>
     <div class="container">
       <div class="row">
         <% @consoles.each do |console| %>
           <div class="col-xs-12 col-sm-6 col-md-4">
-            <div class="card" style="background-image: url(
-              <% if console.photo.nil? %>
-                '<%= cl_image_path console.photo, height: 300, width: 400, crop: :fill %>')">
-
-              <% else %>
-                <%= image_tag "Atari_2600.jpg" %>)">
-              <% end %>
-              <h6><%= link_to console.brand, console_path(console) %>
-              <%= console.model %></h6>
-              <p><%= console.price %>€/Jour</p>
-            </div>
+            <% if console.photo.present? %>
+              <div class="card" style="background-image: url(
+                '<%= cl_image_path console.photo %>')">
+            <% else %>
+              <div class="card" style="background-image: url(assets/Mario1.png)">
+            <% end %>
+                <h6><%= link_to console.brand, console_path(console) %>
+                <%= console.model %></h6>
+                <p><%= console.price %>€/Jour</p>
+              </div>
           </div>
         <% end %>
       </div>
     </div>
- <!--  </div>
+  </div>
 </div>
- -->
+
 
