@@ -4,6 +4,14 @@
   padding: 20px;
   border-bottom: 1px solid rgba(220,224,244,0.4);
   background-color: white;
+  opacity: 0.8;
+  transition: opacity 0.4s ease-in-out;
+  box-shadow: 0px 0px 5px #4158b3;
+  border-radius: 7px;
+    &:hover {
+    opacity: 1;
+  transition: opacity 0.4s ease-in-out;
+  }
 }
 .message:last-child {
   border-bottom: none;
@@ -57,6 +65,11 @@
 }
 
 .avatar-large {
+  height: 50px;
   width: 50px;
   border-radius: 50%;
+}
+
+.encart-dash {
+  margin-bottom: 20px;
 }
