@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :consoles
+  has_many :bookings_on_consoles, through: :consoles, source: :bookings
   has_many :bookings
   has_many :booked_consoles, through: :bookings, source: :console
 

@@ -1,95 +1,75 @@
 
-<div class="wrapper2">
+<div class="wrapper">
   <div class="container">
-    <h1>dashboard</h1>
-<p><% current_user.consoles.each do |c| %>
-  <%= c %>
-  <% end %>
 
 
 
-</p>
 
+    <h1>dashboard <i class="fas fa-trophy"></i></h1>
 
+     <h1>Mes bookings (<%= current_user.bookings.count %>)</h1>
+    <% current_user.bookings.each do |book| %>
 
-    <div>
-      <h1>Mes Bookings (<%= current_user.bookings.count %>)</h1>
-      <% current_user.bookings.each do |book| %>
-        <%= book.id %>
+<div class="message">
+  <img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/gabriel-dehan">
+  <div class="message-name">
+    <h3><i class="fas fa-terminal"></i><%=book.console.user.email %></h3>
+  </div>
+  <div class="message-body">
+    <p>
+    <strong> <%= book.console.brand %> <%= book.console.model %></strong> du <%= book.start_date %> au <%= book.end_date %>
+    </p>
+  </div>
 
-      <% if book.status == 'Pending' %>
-        <div class="booking-container">
-          <p class="text-center"><%= book.id %>//////<%= book.start_date %>/<%= book.end_date %> for <%= book.console.user.email %> <%= book.status %>
-
-
-          </p>
-          <div class="buttons-container">
-
-            <% if policy(book).edit? %>
-            <%= simple_form_for book do |f| %>
-            <%= f.input :status, as: :hidden, input_html: { value: 'accepted'} %>
-            <%= f.submit "Accepted", class: "btn btn-primary" %>
-            <% end %>
-
-
-            <%= simple_form_for book do |f| %>
-            <%= f.input :status, as: :hidden, input_html: { value: 'Rejected'} %>
-            <%= f.submit "Refuser", class: "btn btn-danger" %>
-            <% end %>
-            <% end %>
-          </div>
-        </div>
-        <% end %>
-      </div>
-      <% end %>
-
-
-    </div>
-
-     <div>
-      <h3>Mes Bookings en attente</h3>
-      <% current_user.bookings.each do |book| %>
-      <% if book.status == "Pending" %>
-      <div>
-        <div class="booking-container ">
-          <p class="text-center"><%= book.start_date %>/<%= book.end_date %> for <%= book.console.user.email %> <%= book.status %>            <% if book.status == "accepted" %>
+  <% if book.status == "Pending" %>
+  <i class="fas fa-question" style="color:blue"></i>
+<% elsif book.status == "accepted" %>
              <i class="far fa-check-circle" style="color:green"></i>
-            <% elsif book.status == "Rejected" %>
-              <i class="fas fa-ban" style="color:Tomato"></i>
-            <% else %>
-              <i class="far fa-clock"></i>
-            <% end %></p>
-        </div>
-        <% end %>
-      </div>
-      <% end %>
+<% else %>
+                <i class="fas fa-ban" style="color:Tomato"></i>
+<% end %>
 
-    <div>
-      <h3>Mes Bookings acceptees</h3>
-      <% current_user.bookings.each do |book| %>
-      <% if book.status == "accepted" %>
-      <div>
-        <div class="booking-container ">
-          <p class="text-center"><%= book.start_date %>/<%= book.end_date %> for <%= book.console.user.email %> <%= book.status %>
-             <i class="far fa-check-circle" style="color:green"></i>
-        </div>
-        <% end %>
-      </div>
-      <% end %>
 
-          <div>
-      <h3>Mes Bookings refusees</h3>
-      <% current_user.bookings.each do |book| %>
-      <% if book.status == "Rejected" %>
-      <div>
-        <div class="booking-container ">
-          <p class="text-center"><%= book.start_date %>/<%= book.end_date %> for <%= book.console.user.email %> <%= book.status %>
-              <i class="fas fa-ban" style="color:Tomato"></i>
-        </div>
+
+</div>
+
+    <% end %>
+
+
+    <hr>
+
+ <h1>Mes consoles en location (<%= current_user.bookings_on_consoles.count %>)</h1>
+    <% current_user.bookings_on_consoles.each do |book| %>
+
+<div class="message">
+  <img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/gabriel-dehan">
+  <div class="message-name">
+    <h3><i class="fas fa-terminal"></i><%=book.user.email %></h3>
+  </div>
+  <div class="message-body">
+    <p>
+    <strong> <%= book.console.brand %> <%= book.console.model %></strong> du <%= book.start_date %> au <%= book.end_date %>
+    </p>
+  </div>
+        <div class="buttons-container">
+        <% if policy(book).edit? %>
+        <%= simple_form_for book do |f| %>
+        <%= f.input :status, as: :hidden, input_html: { value: 'accepted'} %>
+        <%= f.submit "Accepted", class: "btn-green" %>
+        <% end %>
+        <%= simple_form_for book do |f| %>
+        <%= f.input :status, as: :hidden, input_html: { value: 'Rejected'} %>
+        <%= f.submit "Refuser", class: "btn-yellow" %>
+        <% end %>
         <% end %>
       </div>
-      <% end %>
-    </div>
-    </div>
+</div>
+
+    <% end %>
+
+
   </div>
 </div>
+
+
+
