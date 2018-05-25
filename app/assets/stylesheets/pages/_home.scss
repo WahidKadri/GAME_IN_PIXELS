@@ -3,13 +3,12 @@
   // position: relative;
   color: white;
   text-align: center;
-  // height: calc(100vh - 70px);
+  // height: calc(100vh - 80px);
   background-size: cover !important;
   display: flex;
   align-items: center;
   justify-content: center;
   background: linear-gradient(to bottom, #0b112c 0%,#2a3c94 100%);
-  min-height: 80vh;
 }
 
 .encart {
@@ -18,7 +17,7 @@
   justify-content: center;
   background: linear-gradient(to right bottom, black 0%,#1F1F1F 100%);
   min-height: 60vh;
-  width: 1000px;
+  min-width: 100vh;
   border-radius: 5px;
   border: 1px solid #4158b3;
   box-shadow: 0px 0px 5px #4158b3;
@@ -29,6 +28,7 @@ h1 {
   margin-top: 0;
   padding-top: 20px;
   color: white;
+  padding-top: 30px;
   padding-bottom: 60px;
 }
 
@@ -46,8 +46,8 @@ h1 {
 
 .mario img {
   position: absolute;
-  top: 43px;
-  left: 200px;
+  top: 77px;
+  left: 300px;
   height: 200px;
   width: 300px;
 }
