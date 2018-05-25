@@ -39,7 +39,11 @@ consoles = [
   { brand: 'SEGA', model: 'SATURNE', number_of_pads: 2, description: "comme neuve (ou presque...)", address: "7 avenue Gambetta 75011 Paris", price: 13, user: User.last }
 ]
 
-# urls = []
+urls = [
+  'https://www.objetconnecte.net/wp-content/uploads/2018/05/n64-nintendo-64-classic-mini-660x330.jpg',
+  'https://cdn.shopify.com/s/files/1/0560/9965/products/nes_grande.png?v=1492868400',
+
+]
 # consoles.each_with_index do |console, index|
 #   game = Console.new(console)
 #   game.remote_photo_url = urls[index]
