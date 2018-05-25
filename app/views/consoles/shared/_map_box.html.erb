@@ -1,0 +1,7 @@
+<div class="card card-info-bulle" style="background-image: url(
+  '<%= cl_image_path console.photo %>')">
+</div>
+<p class="card-info-bulle"><%= console.brand %> <%= console.model %></p>
+<p><%= link_to console_path(console), class:"btn-yellow" do %>
+<%= console.price %>€/Jour
+<% end %></p>

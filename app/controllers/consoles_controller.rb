@@ -10,8 +10,9 @@ class ConsolesController < ApplicationController
     @markers = @consoles.map do |console|
        {
          lat: console.latitude,
-         lng: console.longitude#,
-         # infoWindow: { content: render_to_string(partial: "/consoles/map_box", locals: { console: console }) }
+         lng: console.longitude,
+         icon: ActionController::Base.helpers.asset_path('Mario_pixel.png'),
+         infoWindow: { content: render_to_string(partial: "/consoles/shared/map_box", locals: { console: console }) }
        }
     end
   end
