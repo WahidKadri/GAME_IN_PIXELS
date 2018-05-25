@@ -41,7 +41,7 @@ consoles = [
 
 urls = [
   'https://www.objetconnecte.net/wp-content/uploads/2018/05/n64-nintendo-64-classic-mini-660x330.jpg',
-  'https://cdn.shopify.com/s/files/1/0560/9965/products/nes_grande.png?v=1492868400',
+  'http://www.nintendo-master.com/fichiers/news_covers/la-super-nes-mini-version-us-en-images-48847-4453.jpg',
   'http://videogamecritic.com/images/systems/mastersystem.jpg',
   'https://images-na.ssl-images-amazon.com/images/I/71fPsB7byrL._SX569_.jpg',
   'http://france.retrogaming.fr/files/2013/01/megadrive-jap-1.jpg',
