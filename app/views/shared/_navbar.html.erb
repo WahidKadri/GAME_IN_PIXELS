@@ -11,9 +11,17 @@
 
       <!-- Links when logged in -->
 
-      <%= link_to "Loue ta console", new_console_path, class: "navbar-wagon-item navbar-wagon-link" %>
- <!--      <%= link_to "Trips", "#", class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "Messages", "#", class: "navbar-wagon-item navbar-wagon-link" %> -->
+
+
+
+        <%= link_to dashboards_path, class: "navbar-wagon-item navbar-wagon-link" do %>
+        <i class="fas fa-trophy"></i> <span>Mon Dashboard</span>
+        <% end %>
+
+        <%= link_to new_console_path, class: "navbar-wagon-item navbar-wagon-link" do %>
+      <i class="fas fa-hand-holding-usd"></i> <span>Je loue ma console</span>
+        <% end %>
+
 
       <!-- Avatar with dropdown menu -->
       <div class="navbar-wagon-item">

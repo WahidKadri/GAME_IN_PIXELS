@@ -11,7 +11,7 @@
     <% current_user.bookings.each do |book| %>
 
 <div class="message">
-  <img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/gabriel-dehan">
+   <%= cl_image_tag book.console.user.avatar, class: "avatar-large" %>
   <div class="message-name">
     <h3><i class="fas fa-terminal"></i><%=book.console.user.email %></h3>
   </div>
@@ -38,11 +38,12 @@
 
     <hr>
 
+<div class="encart-dash">
  <h1>Mes consoles en location (<%= current_user.bookings_on_consoles.count %>)</h1>
     <% current_user.bookings_on_consoles.each do |book| %>
 
 <div class="message">
-  <img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/gabriel-dehan">
+   <%= cl_image_tag book.user.avatar, class: "avatar-large" %>
   <div class="message-name">
     <h3><i class="fas fa-terminal"></i><%=book.user.email %></h3>
   </div>
@@ -52,7 +53,7 @@
     </p>
   </div>
         <div class="buttons-container">
-        <% if policy(book).edit? %>
+        <% if policy(book).edit? && book.status == "Pending"%>
         <%= simple_form_for book do |f| %>
         <%= f.input :status, as: :hidden, input_html: { value: 'accepted'} %>
         <%= f.submit "Accepted", class: "btn-green" %>
@@ -63,11 +64,24 @@
         <% end %>
         <% end %>
       </div>
+
+<% if book.status == "Pending" %>
+<% elsif book.status == "accepted" %>
+             <i class="far fa-check-circle" style="color:green"></i>
+<% else %>
+                <i class="fas fa-ban" style="color:Tomato"></i>
+<% end %>
+
+
+
+
+
+
 </div>
 
     <% end %>
 
-
+</div>
   </div>
 </div>
 

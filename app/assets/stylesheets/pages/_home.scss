@@ -25,6 +25,8 @@
 }
 
 h1 {
+  margin-top: 0;
+  padding-top: 20px;
   color: white;
   padding-top: 30px;
   padding-bottom: 60px;
@@ -38,6 +40,8 @@ h1 {
 
 .form-control {
   border-radius: 7px;
+  border: 1px solid #4158b3;
+  box-shadow: 0px 0px 5px #4158b3;
 }
 
 .mario img {
