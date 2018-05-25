@@ -10,4 +10,5 @@ class User < ApplicationRecord
   has_many :booked_consoles, through: :bookings, source: :console
 
   # validates :avatar, presence: true
+  mount_uploader :avatar, PhotoUploader
 end

@@ -5,8 +5,14 @@
         <h1><%= @console.brand %> <%= @console.model %></h1>
         <div>
         <div class="col-md-6">
+          <% if @console.photo.present? %>
             <div class="img-show" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path @console.photo, height: 300, width: 400, crop: :fill %>')">
             </div>
+          <% else %>
+            <!-- <div class="img-show" style="background-image: url(assets/console_retro.jpg)"> -->
+              <div class="img-show" style="background-image: url('/assets/console_retro.jpg')">
+            </div>
+          <% end %>
           </div>
         </div>
         <div class="col-md-4 col-md-offset-1">
@@ -23,7 +29,7 @@
            </div>
            <hr>
            <p>  <strong>Prix</strong>: <%= @console.price  %> Euro / jour <i class="fas fa-coins"></i></p>
-            <%= f.submit "Louer", class: "btn btn-danger" %>
+            <%= f.submit "Louer", class: "btn-green" %>
       <% end %>
         </div>
         </div>
