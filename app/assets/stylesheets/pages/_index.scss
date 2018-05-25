@@ -2,3 +2,12 @@
 @import "home";
 @import "new";
 @import "show";
+
+.booking-container {
+  display: flex;
+  justify-content: space-between
+}
+
+.buttons-container {
+  display: flex;
+}

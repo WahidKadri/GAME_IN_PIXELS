@@ -3,7 +3,7 @@ class Console < ApplicationRecord
   has_many :bookings
   has_many :reviews, through: :bookings
 
-  validates :brand, :model, :description, :address, :price, :number_of_pads, presence: true
+  validates :photo, :brand, :model, :description, :address, :price, :number_of_pads, presence: true
 
   mount_uploader :photo, PhotoUploader
 
