@@ -8,14 +8,17 @@ h2 {
 }
 
 .card {
-  position: relative;
-  width: 350px;
-  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  // position: relative;
+  height: 140px;
   text-shadow: 0 1px 3px rgba(0,0,0,0.6);
   background-size: cover !important;
   background-position: center;
   color: white;
   position: relative;
+  margin: 15px 10px;
   box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
   border-radius: 5px;
 }

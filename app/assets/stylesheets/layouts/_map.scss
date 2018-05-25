@@ -1,0 +1,24 @@
+#map {
+  flex: 0 0 35%;
+  height: 100vh;
+  position: sticky !important;
+  top: 0;
+}
+
+.wrapper-map {
+  // position: relative;
+  color: white;
+  text-align: center;
+  // height: calc(100vh - 70px);
+  background-size: cover !important;
+  background: linear-gradient(to bottom, #0b112c 0%,#2a3c94 100%);
+  min-height: 80vh;
+}
+
+.main-container {
+  display: flex
+}
+
+.card-container {
+  flex-grow: 1;
+}
