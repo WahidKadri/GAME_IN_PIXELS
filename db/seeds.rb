@@ -39,8 +39,11 @@ consoles = [
   { brand: 'SEGA', model: 'SATURNE', number_of_pads: 2, description: "comme neuve (ou presque...)", address: "7 avenue Gambetta 75011 Paris", price: 13, user: User.last }
 ]
 
-consoles.each do |console|
-  Console.create(console)
-end
+# urls = []
+# consoles.each_with_index do |console, index|
+#   game = Console.new(console)
+#   game.remote_photo_url = urls[index]
+#   game.save
+# end
 
 puts "Creation finished !"
