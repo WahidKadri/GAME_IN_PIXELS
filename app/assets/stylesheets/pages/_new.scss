@@ -10,8 +10,19 @@
   text-align: center;
   background-size: cover !important;
   background: linear-gradient(to bottom, #0b112c 0%,#2a3c94 100%);
+  padding-bottom: 45px;
+  // padding-bottom: 150px;
   }
 
   .title {
     padding-top: 200px;
   }
+
+.min-height {
+  height: calc(100vh - 140px);
+}
+
+.padding-form {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
