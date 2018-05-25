@@ -35,7 +35,7 @@ class ConsolesController < ApplicationController
     @console.user = current_user
     authorize @console
     if @console.save
-      redirect_to root_path
+      redirect_to consoles_path
     else
       render :new
     end
