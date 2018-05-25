@@ -42,12 +42,20 @@ consoles = [
 urls = [
   'https://www.objetconnecte.net/wp-content/uploads/2018/05/n64-nintendo-64-classic-mini-660x330.jpg',
   'https://cdn.shopify.com/s/files/1/0560/9965/products/nes_grande.png?v=1492868400',
-
+  'http://videogamecritic.com/images/systems/mastersystem.jpg',
+  'https://images-na.ssl-images-amazon.com/images/I/71fPsB7byrL._SX569_.jpg',
+  'http://france.retrogaming.fr/files/2013/01/megadrive-jap-1.jpg',
+  'http://www.fredzone.org/wp-content/uploads/2012/09/mod-atari-2600-5.jpg',
+  'https://pic.clubic.com/v1/images/1191626/raw',
+  'http://3.bp.blogspot.com/-l2q27cIq51I/TdwpXYFT1ZI/AAAAAAAAANg/b-5SItyZvs4/s1600/gamegear-sonic-01.jpg',
+  'http://i86.servimg.com/u/f86/19/35/61/76/game_b11.jpg',
+  'http://france.retrogaming.fr/files/2013/02/sega-saturn-daytona-USA-fr1.jpg'
 ]
-# consoles.each_with_index do |console, index|
-#   game = Console.new(console)
-#   game.remote_photo_url = urls[index]
-#   game.save
-# end
+
+consoles.each_with_index do |console, index|
+  game = Console.new(console)
+  game.remote_photo_url = urls[index]
+  game.save
+end
 
 puts "Creation finished !"
