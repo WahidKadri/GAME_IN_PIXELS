@@ -4,6 +4,16 @@ class ConsolesController < ApplicationController
     @consoles = policy_scope(Console)
     @consoles = Console.where(brand: params[:console][:brand]) if (params[:console].present? && params[:console][:brand].present?)
     @consoles = Console.where(model: params[:console][:model]) if (params[:console].present? && params[:console][:model].present?)
+
+    # @consoles = Console.where.not(latitude: nil, longitude: nil)
+
+    @markers = @consoles.map do |console|
+       {
+         lat: console.latitude,
+         lng: console.longitude#,
+         # infoWindow: { content: render_to_string(partial: "/consoles/map_box", locals: { console: console }) }
+       }
+    end
   end
 
   def show
