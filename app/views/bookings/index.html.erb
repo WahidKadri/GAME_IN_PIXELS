@@ -53,7 +53,7 @@
     </p>
   </div>
         <div class="buttons-container">
-        <% if policy(book).edit? %>
+        <% if policy(book).edit? && book.status == "Pending"%>
         <%= simple_form_for book do |f| %>
         <%= f.input :status, as: :hidden, input_html: { value: 'accepted'} %>
         <%= f.submit "Accepted", class: "btn-green" %>
@@ -64,6 +64,19 @@
         <% end %>
         <% end %>
       </div>
+
+<% if book.status == "Pending" %>
+<% elsif book.status == "accepted" %>
+             <i class="far fa-check-circle" style="color:green"></i>
+<% else %>
+                <i class="fas fa-ban" style="color:Tomato"></i>
+<% end %>
+
+
+
+
+
+
 </div>
 
     <% end %>
